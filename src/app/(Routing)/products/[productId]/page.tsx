@@ -1,5 +1,4 @@
 import FetchData from "@/app/_lib/fetch";
-
 export default async function ProductDetail({
   params,
 }: {
@@ -9,6 +8,7 @@ export default async function ProductDetail({
   const productData = await FetchData(
     `https://api.vercel.app/products/${productId}`
   );
+
   return (
     <div>
       <h1>Product Details ID : {productId}</h1>
