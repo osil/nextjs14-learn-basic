@@ -1,13 +1,4 @@
-import axios from "axios";
-
-async function fetchData(id: string) {
-  try {
-    const response = await axios.get(`https://api.vercel.app/products/${id}`);
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-}
+import FetchData from "@/app/_lib/fetch";
 
 export default async function ProductDetail({
   params,
@@ -15,7 +6,9 @@ export default async function ProductDetail({
   params: { productId: string };
 }) {
   const { productId } = params;
-  const productData = await fetchData(productId);
+  const productData = await FetchData(
+    `https://api.vercel.app/products/${productId}`
+  );
   return (
     <div>
       <h1>Product Details ID : {productId}</h1>

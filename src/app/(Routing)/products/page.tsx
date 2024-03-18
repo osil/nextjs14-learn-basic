@@ -1,17 +1,8 @@
-import axios from "axios";
+import FetchData from "@/app/_lib/fetch";
 import Link from "next/link";
 
-async function fetchData() {
-  try {
-    const response = await axios.get("https://api.vercel.app/products");
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 export default async function Products() {
-  const productsData = await fetchData();
+  const productsData = await FetchData("https://api.vercel.app/products");
   return (
     <div>
       <h1>
