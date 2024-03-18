@@ -10,6 +10,7 @@ export default async function ProductDetail({ params }: Props) {
   const productData = await FetchData(
     `https://api.vercel.app/products/${productId}`
   );
+
   return (
     <div>
       <h1>Product Details ID : {productId}</h1>
