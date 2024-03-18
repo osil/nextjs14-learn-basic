@@ -1,10 +1,11 @@
 import FetchData from "@/app/_lib/fetch";
+type Props = {
+  params: {
+    productId: string;
+  };
+};
 
-export default async function ProductDetail({
-  params,
-}: {
-  params: { productId: string };
-}) {
+export default async function ProductDetail({ params }: Props) {
   const { productId } = params;
   const productData = await FetchData(
     `https://api.vercel.app/products/${productId}`
