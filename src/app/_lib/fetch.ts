@@ -9,4 +9,6 @@ const FetchData = async (url: string) => {
   }
 };
 
+// privte folders
+
 export default FetchData;
