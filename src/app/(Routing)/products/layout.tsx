@@ -5,7 +5,7 @@ export default function ProductLayout({
 }) {
   return (
     <>
-      <h2>Nested Layouts</h2>
+      <h2>Nested Layouts In Products Folders</h2>
       {children}
     </>
   );
