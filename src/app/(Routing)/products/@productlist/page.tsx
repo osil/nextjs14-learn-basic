@@ -1,17 +1,26 @@
-import FetchData from "@/app/_lib/fetch";
+"use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import FetchData from "@/app/_lib/fetch";
 
-export default async function ProductList() {
-  const productsData = await FetchData("https://api.vercel.app/products");
+export default function ProductList() {
+  const [blogs, setBlogs] = useState([]);
+
+  const initialBlogs = async () => {
+    const result = await FetchData("https://api.vercel.app/blog");
+    setBlogs(result);
+  };
+
+  useEffect(() => {
+    initialBlogs();
+  }, []);
 
   return (
     <>
       <h3>Parallel Routes</h3>
-      {productsData.map((product: any, index: number) => (
+      {blogs.map((blog: any, index: number) => (
         <li key={index}>
-          <Link href={`/products/${product.id}`}>
-            {product.name} <b>price : {product.price}</b>
-          </Link>
+          <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
         </li>
       ))}
     </>
