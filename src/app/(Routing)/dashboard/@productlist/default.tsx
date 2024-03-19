@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import FetchData from "@/app/_lib/fetch";
 
-export default function ProductList() {
+export default function DefaultProductList() {
   const [products, setProducts] = useState([]);
 
   const initialBlogs = async () => {
@@ -17,7 +17,7 @@ export default function ProductList() {
 
   return (
     <>
-      <h3>Parallel Routes Product List</h3>
+      <h3>Parallel Routes Product List Default.tsx</h3>
       <Link href="/dashboard/active"> active </Link>
       {products.map((product: any, index: number) => (
         <li key={index}>
