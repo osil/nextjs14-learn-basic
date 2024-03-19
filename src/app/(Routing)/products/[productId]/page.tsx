@@ -1,3 +1,4 @@
+"use server";
 import FetchData from "@/app/_lib/fetch";
 type Props = {
   params: {
